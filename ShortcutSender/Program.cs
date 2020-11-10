@@ -16,7 +16,12 @@ namespace ShortcutSender
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			using (AskFolderDlg dlg = new AskFolderDlg())
+			{
+				if (dlg.ShowDialog() == DialogResult.OK)
+				{
+				}
+			}
 		}
 	}
 }
