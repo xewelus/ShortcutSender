@@ -11,7 +11,6 @@ namespace ShortcutSender
 		public AskFolderDlg()
 		{
 			this.InitializeComponent();
-			
 		}
 
 		protected override void OnLoad(EventArgs e)
@@ -27,12 +26,12 @@ namespace ShortcutSender
 
 		public string GetSelectedFolder()
 		{
-			if (this.lvFolders.SelectedItems.Count == 0)
+			if (this.lvFolders.CheckedItems.Count == 0)
 			{
 				throw new InvalidOperationException();
 			}
 
-			ListViewItem item = this.lvFolders.SelectedItems[0];
+			ListViewItem item = this.lvFolders.CheckedItems[0];
 			string folder = (string)item.Tag;
 			return folder;
 		}
