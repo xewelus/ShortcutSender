@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 using IWshRuntimeLibrary;
+using ShortcutSender.Properties;
 
 namespace ShortcutSender
 {
@@ -23,6 +24,9 @@ namespace ShortcutSender
 			{
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
+					string folder = dlg.GetSelectedFolder();
+					Settings.Default.LastFolder = folder;
+					Settings.Default.Save();
 				}
 			}
 		}

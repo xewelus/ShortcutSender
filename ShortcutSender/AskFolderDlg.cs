@@ -117,9 +117,6 @@ namespace ShortcutSender
 						item.Checked = false;
 					}
 				}
-
-				Settings.Default.LastFolder = (string)e.Item.Tag;
-				Settings.Default.Save();
 			}
 
 			this.btnOk.Enabled = this.lvFolders.CheckedItems.Count > 0;
